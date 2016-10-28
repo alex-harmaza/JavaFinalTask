@@ -1,0 +1,33 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Test program" parallel="false">
+    <test name="Test DAO testing">
+        <classes>
+            <class name="by.training.epam.lab9.test.TestDAOTest"/>
+        </classes>
+    </test>
+
+    <test name="Answer DAO testing">
+        <classes>
+            <class name="by.training.epam.lab9.test.AnswerDAOTest"/>
+        </classes>
+    </test>
+
+    <test name="Question DAO testing">
+        <classes>
+            <class name="by.training.epam.lab9.test.QuestionDAOTest"/>
+        </classes>
+    </test>
+
+    <test name="Subject DAO testing">
+        <classes>
+            <class name="by.training.epam.lab9.test.SubjectDAOTest"/>
+        </classes>
+    </test>
+
+    <test name="User DAO testing">
+        <classes>
+            <class name="by.training.epam.lab9.test.UserDAOTest"/>
+        </classes>
+    </test>
+</suite>

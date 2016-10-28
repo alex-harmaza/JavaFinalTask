@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<data xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns="http://www.training.by/test-data-schema"
+      xsi:schemaLocation="http://www.training.by/test-data-schema test-data-schema.xsd">
+
+    <user>
+        <login>user</login>
+        <password>password</password>
+        <role>TUTOR</role>
+    </user>
+
+    <subject>
+        <id>1</id>
+        <text>Subject</text>
+    </subject>
+
+    <test>
+        <id>1</id>
+        <name>Test</name>
+        <error-threshold>3</error-threshold>
+        <subject-id>1</subject-id>
+    </test>
+
+    <question>
+        <id>1</id>
+        <text>Question</text>
+        <test-id>1</test-id>
+    </question>
+
+    <answer>
+        <text>Answer</text>
+        <question-id>1</question-id>
+        <is-correct>true</is-correct>
+    </answer>
+
+</data>

@@ -1,0 +1,73 @@
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://www.training.by/test-data-schema"
+        xmlns:tns="http://www.training.by/test-data-schema"
+        elementFormDefault="qualified">
+
+    <element name="data">
+        <complexType>
+            <all>
+                <element name="user" type="tns:User"/>
+                <element name="test" type="tns:Test"/>
+                <element name="question" type="tns:Question"/>
+                <element name="answer" type="tns:Answer"/>
+                <element name="subject" type="tns:Subject"/>
+            </all>
+        </complexType>
+    </element>
+
+
+    <complexType name="User">
+        <sequence>
+            <element name="login" type="tns:NotEmptyString"/>
+            <element name="password" type="tns:NotEmptyString"/>
+            <element name="role" type="tns:UserRole"/>
+        </sequence>
+    </complexType>
+
+    <complexType name="Test">
+        <sequence>
+            <element name="id" type="unsignedLong"/>
+            <element name="name" type="tns:NotEmptyString"/>
+            <element name="error-threshold" type="unsignedByte"/>
+            <element name="subject-id" type="unsignedLong"/>
+        </sequence>
+    </complexType>
+
+    <complexType name="Question">
+        <sequence>
+            <element name="id" type="unsignedLong"/>
+            <element name="text" type="tns:NotEmptyString"/>
+            <element name="test-id" type="unsignedLong"/>
+        </sequence>
+    </complexType>
+
+    <complexType name="Answer">
+        <sequence>
+            <element name="text" type="tns:NotEmptyString"/>
+            <element name="question-id" type="unsignedLong"/>
+            <element name="is-correct" type="boolean"/>
+        </sequence>
+    </complexType>
+
+    <complexType name="Subject">
+        <sequence>
+            <element name="id" type="unsignedLong"/>
+            <element name="text" type="tns:NotEmptyString"/>
+        </sequence>
+    </complexType>
+
+
+    <simpleType name="UserRole">
+        <restriction base="string">
+            <enumeration value="TUTOR"/>
+            <enumeration value="STUDENT"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="NotEmptyString">
+        <restriction base="string">
+            <minLength value="1"/>
+        </restriction>
+    </simpleType>
+
+</schema>
